@@ -10,9 +10,13 @@ import {
 import {
   chat
 } from './chat'
-//合并所有reducer
+import {
+  list
+} from './list'
+
 export default combineReducers({
   user,
   chatuser,
-  chat
+  chat,
+  list
 })

@@ -1,0 +1,47 @@
+.silderCon{
+    position: relative;
+    width: 220px;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+}
+.imgCon{
+    width: 100%;
+    text-align: center;
+    padding-top: 60px;
+    color: #fff;
+}
+.imgCon P {
+    font-size: 18px;
+    line-height: 2px;
+}
+
+.imgCon span {
+    font-size: 12px;
+    color: #eee;
+}
+
+.imgCon img{
+    width: 80px;
+}
+
+.progressCon{
+    width: 86%;
+    padding: 0 7%;
+    margin-top: 30px;
+}
+
+.progress{
+    margin: 10px 0;
+    
+}
+.progressSpan{
+    font-size: 12px;
+    color: #eee;
+    margin-top: 24px;
+}
+
+
+
+.progressCon .am-progress-outer {
+    background-color: rgba(0, 0, 0, .9);
+}

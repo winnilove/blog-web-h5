@@ -6,6 +6,7 @@ const path = require("path");
 
 const User = model.getModel("user");
 const Chat = model.getModel("chat");
+
 const app = express();
 //work with express
 //socket.io和express绑定起来
@@ -13,7 +14,6 @@ const server = require('http').Server(app)
 const io = require("socket.io")(server);
 // io 是权限连接的请求
 //socket 是这个连接的请求
-
 
 io.on('connection', function(socket) {
   socket.on('sendmsg', function(data) {
@@ -40,11 +40,10 @@ io.on('connection', function(socket) {
 })
 
 const userRouter = require("./user");
-
-
 app.use(cookieParser());
 app.use(bodyParser.json());
 app.use("/user", userRouter);//访问后端/user,使用userRouter
+
 app.use(function(req,res,next){
   // 如果命中的路由是user开头或者static开头,直接执行下一步
   if(req.url.startsWith('/user')||req.url.startsWith('/static')){

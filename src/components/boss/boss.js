@@ -5,7 +5,7 @@ import {
 import {
   getUserList
 } from '../../reducers/chatuser'
-import UserCard from '../usercard/usercard'
+// import UserCard from '../usercard/usercard'
 
 @connect(
   state => state.chatuser, {
@@ -19,7 +19,8 @@ class Boss extends React.Component {
   }
   render() {
     //console.log(this.state)
-    return <UserCard userlist={this.props.userlist}/>
+    return <div></div>
+    // return <UserCard userlist={this.props.userlist}/>
   }
 }
 export default Boss;

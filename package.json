@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "admin-mongo": "0.0.23",
     "antd-mobile": "^2.1.8",
     "autoprefixer": "7.1.6",
     "axios": "^0.18.0",
@@ -64,7 +65,7 @@
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
-    "server":"nodemon server/server.js"
+    "server": "nodemon server/server.js"
   },
   "jest": {
     "collectCoverageFrom": [

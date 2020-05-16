@@ -1,0 +1,127 @@
+.listCon{
+    width: 100%;
+}
+.header{
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.headerMask{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, .3);
+}
+.headercon{
+    padding-top: 120px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.headercon p{
+    color: #fff;
+    font-size: 22px;
+    padding: 0 30px;
+    line-height: 28px;
+    font-family: "Montserrat Light";
+}
+
+.header img{
+    width: 100%;
+}
+.footerInfolist{
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerInfolist span{
+    color: #aaa;
+    margin-left: 10px;
+    font-size: 12px;
+    vertical-align: middle;
+}
+
+.listTab{
+    margin-top: 10px;
+}
+.itemGlug{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: -2px;
+    background-color: #dce1eb;
+    overflow: hidden;
+}
+.itemCloun{
+    margin-top: 1px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* grid-template-rows: 50% 50%; */
+}
+
+.item{
+    height: 280px;
+    width: 100%;
+    margin-left: 1px;
+    border: 1px solid #dce1eb;
+    background-color: #fff;
+
+}
+
+
+
+.item img {
+    width: 90%;
+    padding-left: 10%;
+    padding-top: 6%;
+}
+
+.item span {
+    display: block;
+    padding: 0 10%;
+}
+.title {
+    font-size: 14px;
+    font-family: "Myriad Pro";
+    color: rgb(143, 166, 198);
+    text-transform: uppercase;
+    line-height: 36px;
+   
+}
+
+.discrpt{
+    font-size: 14px;
+    font-family: "Myriad Pro";
+    color: rgb(0, 0, 0);
+    line-height: 22px;   
+  }
+  
+.time {
+    font-size: 12px;
+    font-family: "Myriad Pro";
+    color: rgb(188, 192, 200);
+    line-height: 40px;
+}
+
+.seconedGlug{
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+    width: 100%;
+    height: 400px;
+    border-bottom: 1px solid #dce1eb;
+    background-color: color;
+}
+
+.seconedGlug >img{
+    width:100% ;
+}
+
+.seconedGlug .footerInfolist img{
+    align-items: left !important;
+}

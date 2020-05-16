@@ -1,5 +1,4 @@
 import React from 'react';
-import Logo from '../../components/logo/logo'
 import {
   List,
   InputItem,
@@ -7,22 +6,19 @@ import {
   WhiteSpace,
   Button
 } from "antd-mobile";
-import {
-  login
-} from '../../reducers/login'
-import {
-  connect
-} from 'react-redux'
-import {
-  Redirect
-} from 'react-router-dom'
+import {login} from '../../reducers/login'
+import {connect} from 'react-redux'
+import {Redirect} from 'react-router-dom'
 import formhoc from '../../components/form-hoc/form-hoc'
+import './login.css'
+import loginbackimg from './loginbg.png';
 
 @connect(
   state => state.user, {
     login
   }
 )
+
 @formhoc
 class Login extends React.Component {
   constructor(props) {
@@ -30,38 +26,47 @@ class Login extends React.Component {
     this.register = this.register.bind(this);
     this.handleLogin = this.handleLogin.bind(this);
   }
+
   register() {
-    console.log(this.props);
     this.props.history.push("/register");
   }
 
   handleLogin() {
     this.props.login(this.props.state)
   }
+
   render() {
-    return <div>
+    return <div className="container">
         {this.props.redirectTo&&this.props.redirectTo!=='/login' ? <Redirect to={this.props.redirectTo} /> : null}
-        <Logo />
+        <p className="welcome">WELCOME</p>
+        <span className="welcomelabel">
+        The labels you love
+discover over 850 world-class fashion brands here.
+        </span>
+        <div className="conimg">
+          <div  className="mask">
+          </div>
+        <img src={loginbackimg} className="App-logo" alt="logo" />
+       </div>
         <WingBlank>
           <List>
-            {/* this.props.msg */}
-            {this.props.msg ? <p className="error-msg">
-                {this.props.msg}
-              </p> : null}
             <InputItem onChange={v => this.props.handleChange("user", v)}>
-              用户
-            </InputItem>
-            <InputItem onChange={v => this.props.handleChange("pwd", v)} type="password" >
-              密码
+              Username
             </InputItem>
           </List>
           <WhiteSpace />
-          <Button onClick={this.handleLogin} type="primary">
-            登录
+          <List>
+          <InputItem onChange={v => this.props.handleChange("pwd", v)} type="password" >
+              Password
+            </InputItem>
+          </List>
+          <WhiteSpace />
+          <Button onClick={this.handleLogin} type="primary" style={{ color: "#fff", marginTop: "20px"}}>
+          Sign in
           </Button>
           <WhiteSpace />
-          <Button onClick={this.register} type="primary">
-            注册
+          <Button onClick={this.register} type="ghost" style={{ color: "#fff"}}>
+          Sign up
           </Button>
         </WingBlank>
       </div>;

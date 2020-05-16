@@ -1,4 +1,6 @@
 import React from 'react'
+import axios from 'axios'
+
 import {
   connect
 } from 'react-redux'
@@ -46,7 +48,7 @@ class User extends React.Component {
     //console.log(this.props)
     return this.props.user ? (
       <div>
-        <Result 
+        {/* <Result 
           img={<img src={require(`../img/${this.props.avatar}.png`)} className="spe am-icon am-icon-md" alt="" />}
           title = {this.props.user}
           message={this.props.type==='boss'?this.props.company:null}
@@ -67,7 +69,7 @@ class User extends React.Component {
             退出登录
           </Item>
           
-        </List>
+        </List> */}
       </div>
     ) : <Redirect to={this.props.redirectTo}/>
   }

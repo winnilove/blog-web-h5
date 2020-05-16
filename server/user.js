@@ -4,6 +4,7 @@ const utils = require("utility");
 const Router = express.Router();
 const model = require("./model");
 const User = model.getModel("user");
+const List = model.getModel("list");
 const Chat = model.getModel("chat");
 // Chat.remove({},function(e,d){})
 
@@ -11,7 +12,9 @@ const _filter = {
   'pwd': 0,
   '_v': 0
 }
+
 Router.get("/list", function(req, res) {
+  console.log('/list')
   const {
     type
   } = req.query
@@ -26,6 +29,7 @@ Router.get("/list", function(req, res) {
   });
 });
 
+
 Router.post("/login", function(req, res) {
   const {
     user,
@@ -38,7 +42,7 @@ Router.post("/login", function(req, res) {
     if (!doc) {
       return res.json({
         code: 1,
-        msg: "用户名或者密码错误"
+        msg: "User name or bad password"
       });
     }
     res.cookie("userid", doc._id);
@@ -62,7 +66,7 @@ Router.post("/register", function(req, res) {
     if (doc) {
       return res.json({
         code: 1,
-        msg: "用户名重复！"
+        msg: "Duplicate user name！"
       });
     }
     // 不用create是因为create无法获取_id
@@ -98,6 +102,7 @@ Router.post("/register", function(req, res) {
 });
 
 Router.get("/info", function(req, res) {
+  console.log('/info')
   const {
     userid
   } = req.cookies
@@ -122,6 +127,7 @@ Router.get("/info", function(req, res) {
       })
     }
   })
+
 });
 
 Router.post("/update", function(req, res) {
@@ -172,7 +178,6 @@ Router.get("/getmsglist", function(req, res) {
 
 })
 
-// 修正未读消息数
 Router.post("/readmsg",function(req,res){
   const userid = req.cookies.userid;
   const {from} = req.body;
@@ -184,6 +189,17 @@ Router.post("/readmsg",function(req,res){
     return res.json({code:1,msg:'修改失败'})
   })
 })
+
+
+Router.get("/pagelist", function(req, res) {
+  console.log('/pagelist')
+  User.find({}, function(err, doc) {
+    return res.json({
+      code: 0,
+      data: doc
+    });
+  });
+});
 
 function md5Pwd(pwd) {
   const salt = 'this_is_zgwz_md5'
